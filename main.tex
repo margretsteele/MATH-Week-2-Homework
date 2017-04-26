@@ -1,8 +1,8 @@
 \documentclass{exam}
 \usepackage[utf8]{inputenc}
 \usepackage{systeme}
-\usepackage{amsmath}
 \usepackage{url}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
 
 \title{Homework 2}
 \date{April, 24th 2017}
@@ -11,6 +11,61 @@
 \begin{document}
 
 \maketitle
+\section{True or False? Let A be a 5x3 matrix. Then the range of A is a subspace in $\mathbb{R}^3$.}
+\begin{oneparchoices}
+ \choice True
+ \choice False
+\end{oneparchoices}
+
+\section{Is the compliment of a set a subspace?}
+\begin{oneparchoices}
+ \choice Yes
+ \choice No 
+ \choice Depends on the set
+\end{oneparchoices}
+
+\section{Determine a representation for a linear transformation}
+Let 
+\begin{eqnarray}
+\left[ \begin{array}{c} 3 \\ 1 \end{array} \right],
+\left[ \begin{array}{c} 1 \\ 2 \end{array} \right],
+\end{eqnarray}
+be two eigenvectors for a transformation $T$ with eigenvalues 2 and 1 respectively. So, with respect to the two eigenvectors $T$ can be written as
+\[
+  T =
+\left( {\begin{array}{cccc}
+   2 & 0 \\
+   0 & 1
+  \end{array} } \right)
+\]
+Find the representation of $T$ (call it $T'$) with respect to the canonical basis vectors
+\begin{eqnarray}
+\left[ \begin{array}{c} 1 \\ 0 \end{array} \right],
+\left[ \begin{array}{c} 0 \\ 1 \end{array} \right],
+\end{eqnarray}
+Hint: One solution is to find a matrix $Q$ such that $$T' = Q^{-1} \cdot T \cdot Q$$ where $Q$ represents the change in base. Make sure that when $T'$ is applied to the two eigenvectors you get the desired result.
+
+\begin{oneparchoices}
+  \choice $\begin{bmatrix}
+            2 & 0 \\
+            0 & 1
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            11/5 & -3/5 \\
+            2/5 & 4/5
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            2/5 & -1/5 \\
+            1/5 & 3/5
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            3 & 1 \\
+            1 & 2
+          \end{bmatrix}$
+\end{oneparchoices}
 
 \section{Find the eigenvalues of the given matrix.}
 \[
@@ -41,25 +96,25 @@
 \end{center}
 
 \begin{oneparchoices}
-  \choice \begin{bmatrix}
+
+  \choice $\begin{bmatrix}
             1 \\
             5
-          \end{bmatrix}
-
-  \choice \begin{bmatrix}
+          \end{bmatrix}$
+  \choice $\begin{bmatrix}
             -8 \\
             1
-          \end{bmatrix}
+          \end{bmatrix}$
 
-  \choice \begin{bmatrix}
+  \choice $\begin{bmatrix}
             1 \\
             0
-          \end{bmatrix}
+          \end{bmatrix}$
 
-  \choice \begin{bmatrix}
+  \choice $\begin{bmatrix}
             1 \\
             -8
-          \end{bmatrix}
+          \end{bmatrix}$
 \end{oneparchoices}
 
 \section{For the given matrix A, find a basis for the corresponding eigenspace for the given eigenvalue.}
@@ -77,7 +132,7 @@
 \end{center}
 
 \begin{oneparchoices}
-  \choice \begin{Bmatrix}
+  \choice $\begin{Bmatrix}
           \begin{bmatrix}
             1 \\
             3 \\
@@ -88,9 +143,9 @@
             0 \\
             9
           \end{bmatrix}
-          \end{Bmatrix}
+          \end{Bmatrix}$
 
-  \choice \begin{Bmatrix}
+  \choice $\begin{Bmatrix}
           \begin{bmatrix}
             1 \\
             3 \\
@@ -101,23 +156,135 @@
             0 \\
             -9
           \end{bmatrix}
-          \end{Bmatrix}
+          \end{Bmatrix}$
 
-  \choice \begin{Bmatrix} 
+  \choice $\begin{Bmatrix} 
           \begin{bmatrix}
             1 \\
             3 \\ 
             9
           \end{bmatrix}
-          \end{Bmatrix}
+          \end{Bmatrix}$
 
-  \choice \begin{Bmatrix} 
+  \choice $\begin{Bmatrix} 
           \begin{bmatrix}
             1 \\
             -3 \\
             -9
           \end{bmatrix}
-          \end{Bmatrix}
+          \end{Bmatrix}$
+\end{oneparchoices}
+
+\section{Find SVD of A, U$\sum$$\textbf{V}^\intercal$\/.} 
+\[
+  A=
+\left[ {\begin{array}{ccc}
+   3 & 2 & 2 \\
+   2 & 3 & -2
+  \end{array} } \right]
+\]
+
+\subsection{What are the Eigen values of A?}
+\begin{oneparchoices}
+ \choice 25 
+ \choice 39
+ \choice 8
+ \choice 4
+\end{oneparchoices}
+
+\subsection{For $\lambda$=9, what is the unit length vector in the kernel?}
+
+\begin{oneparchoices}
+  \choice $\begin{bmatrix}
+            $1/$\sqrt{2}$$ \\
+            $3/$\sqrt{2}$$ \\
+            2
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            $$\sqrt{2}$$ \\
+            0 \\
+            $1/$\sqrt{2}$$
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            $1/$\sqrt{2}$$ \\
+            $1/$\sqrt{2}$$ \\
+            0
+          \end{bmatrix}$
+          
+    \choice $\begin{bmatrix}
+            3 \\
+            $1/$\sqrt{2}$$ \\
+            2
+          \end{bmatrix}$
+\end{oneparchoices}
+
+\subsection{What is the value of U in SVD?}
+\begin{oneparchoices}
+  \choice $\begin{bmatrix}
+            $2/$\sqrt{2}$$ & $-1/$\sqrt{2}$$\\
+            $3/$\sqrt{2}$$ & $-2/$\sqrt{2}$$
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            7 & $1/4$\\
+            $1/4$ & 4
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            15 & 8\\
+            7 & $-1/$\sqrt{15}$$
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            $1/$\sqrt{2}$$ & $1/$\sqrt{2}$$\\
+            $1/$\sqrt{2}$$ & $-1/$\sqrt{2}$$
+          \end{bmatrix}$
+\end{oneparchoices}
+
+\section{Recommender systems}
+Let's say you are tasked with building a recommender system for Amazon.
+You are given a matrix $M \in \mathbb{R}^{m \times n}$ where the rows corresponds to customers
+and columns corresponding to asins. When a customer purchases an asin, he gives
+a rating between 1 and 5 to the asin (higher the better). Unfortunately, the matrix
+is in-complete as customers only purchase a small fraction of the products Amazon sells.
+\subsection{A simple recommender}
+What would be a good baseline recommender that completes (or fills in) this incomplete matrix,
+so that you can recommend asins with high ratings to users?
+
+\begin{choices}
+ \choice Fill in zeros if a customer hasn't purchased a product
+ 
+  \choice For each customer x, and for each product y the customer hasn't purchased, fill in the average rating of other customers who have purchased the product y.
+  
+ \choice For each customer x, and for each product y the customer x hasn't purchased, fill in the average rating of the products
+ the customer x has purchased.
+ 
+\end{choices}
+
+\subsection{Storing the recommender}
+You decide to store the recommendations from your base-line recommender but observe that you run out of memory.
+What would be a more efficient yet accurate storage solution (i.e. the storage should be $ << O(m*n)$)
+
+\begin{choices}
+ \choice Compute determinants of all the sub-matrices of the recommendation matrix and store them and reconstruct the recommendations at prediction time.
+ 
+ \choice Store the Eigen values and the diagonals of the matrix and reconstruct the recommendations at prediction time.
+ 
+ \choice Do a partial SVD of the recommendation matrix and store the relevant factors and reconstruct recommendations at prediction time.
+ 
+ \choice Compute a complete SVD  of the recommendation matrix and store the factors and reconstruct recommendations at prediction time.
+\end{choices}
+
+\subsection{Making predictions}
+Given your storage solution from the previous question, what is the computational cost of predicting a single customers ratings for products:
+
+\begin{oneparchoices}
+\choice $O(n)$
+\choice $O(m)$
+\choice $O(m\log(n))$
+\choice $O(n\log(m))$
 \end{oneparchoices}
 
 \end{document}
