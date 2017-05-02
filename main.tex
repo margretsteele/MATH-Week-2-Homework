@@ -1,5 +1,5 @@
 \documentclass{exam}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage{systeme}
 \usepackage{url}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
@@ -11,63 +11,83 @@
 \begin{document}
 
 \maketitle
-\section{True or False? Let A be a 5x3 matrix. Then the range of A is a subspace in $\mathbb{R}^3$.}
+\section{Subspaces}
+\subsection{True or False? Let A be a 5x3 matrix. Then the range of A is a subspace in $\mathbb{R}^3$.}
 \begin{oneparchoices}
  \choice True
  \choice False
 \end{oneparchoices}
 
-\section{Is the compliment of a set a subspace?}
+\subsection{Orthogonal complement of a set}
+Given a set $S$, its orthogonal complement is defined as $S^{\perp} = \{x: x^Ty = 0 \mbox{ for all } y \in S\}$.
+Is $S^{\perp}$ a subspace?
 \begin{oneparchoices}
  \choice Yes
  \choice No 
- \choice Depends on the set
+ \choice Depends on $S$
 \end{oneparchoices}
 
-\section{Determine a representation for a linear transformation}
-Let 
-\begin{eqnarray}
-\left[ \begin{array}{c} 3 \\ 1 \end{array} \right],
-\left[ \begin{array}{c} 1 \\ 2 \end{array} \right],
-\end{eqnarray}
-be two eigenvectors for a transformation $T$ with eigenvalues 2 and 1 respectively. So, with respect to the two eigenvectors $T$ can be written as
-\[
-  T =
-\left( {\begin{array}{cccc}
-   2 & 0 \\
-   0 & 1
-  \end{array} } \right)
-\]
-Find the representation of $T$ (call it $T'$) with respect to the canonical basis vectors
-\begin{eqnarray}
-\left[ \begin{array}{c} 1 \\ 0 \end{array} \right],
-\left[ \begin{array}{c} 0 \\ 1 \end{array} \right],
-\end{eqnarray}
-Hint: One solution is to find a matrix $Q$ such that $$T' = Q^{-1} \cdot T \cdot Q$$ where $Q$ represents the change in base. Make sure that when $T'$ is applied to the two eigenvectors you get the desired result.
+
+\subsection{Null space}
+Find the basis vector for null-space of $A = \begin{bmatrix}
+            1 & 2 \\
+            2 & 4
+          \end{bmatrix}$
+
+\begin{oneparchoices}
+\choice $\begin{bmatrix} 2 \\ 1 \end{bmatrix}$
+\choice $\begin{bmatrix} 2 \\ -1 \end{bmatrix}$
+\choice $\begin{bmatrix} -2 \\ -2 \end{bmatrix}$
+\choice Null-space is the $0$ vector
+
+\end{oneparchoices}
+       
+
+
+\section{Matrix representation}
+Let $f : \mathbb{R}^2 \to \mathbb{R}^2$ be a linear operator, and $f((1, 0)) = (1, 3), f((0, 1)) = (2, −1)$. What is the matrix representation of f under the ordered bases ${(1, 0), (0, 1)}$?
 
 \begin{oneparchoices}
   \choice $\begin{bmatrix}
-            2 & 0 \\
-            0 & 1
+            1 & 3 \\
+            2 & -1
           \end{bmatrix}$
 
   \choice $\begin{bmatrix}
-            11/5 & -3/5 \\
-            2/5 & 4/5
+            1 & 2 \\
+            3 & -1
           \end{bmatrix}$
 
   \choice $\begin{bmatrix}
-            2/5 & -1/5 \\
-            1/5 & 3/5
+            -1 & 3 \\
+            2 & 1
           \end{bmatrix}$
 
   \choice $\begin{bmatrix}
-            3 & 1 \\
-            1 & 2
+            2 & 1 \\
+            -1 & 3
           \end{bmatrix}$
 \end{oneparchoices}
 
-\section{Find the eigenvalues of the given matrix.}
+\section{Linear transform I}
+Let $T(x) = (3x_1, 4\sqrt{x_1}*\sqrt{x_2}, x_1 + x_2)$.
+
+\begin{oneparchoices}
+\choice $T$ is a linear transform
+\choice $T$ is not a linear transform and violates additive property
+\choice $T$ is not a linear transform and violates multiplicative property
+\end{oneparchoices}
+
+\section{Linear transform II}
+Let $T(x) = (3x_1, 0, x_1 - x_2)$.
+
+\begin{oneparchoices}
+\choice $T$ is a linear transform
+\choice $T$ is not a linear transform and violates additive property
+\choice $T$ is not a linear transform and violates multiplicative property
+\end{oneparchoices}
+
+\section{Eigen-values}
 \[
   A=
 \left[ {\begin{array}{cc}
@@ -75,6 +95,7 @@ Hint: One solution is to find a matrix $Q$ such that $$T' = Q^{-1} \cdot T \cdot
    33 & 16
   \end{array} } \right]
 \]
+The eigen-values of $A$ are:
 \begin{oneparchoices}
  \choice -4  
  \choice 4,5
@@ -82,7 +103,8 @@ Hint: One solution is to find a matrix $Q$ such that $$T' = Q^{-1} \cdot T \cdot
  \choice -4,-5
 \end{oneparchoices}
 
-\section{For the given matrix and eigenvalue, find an eigenvector corresponding to the eigenvalue.}
+\section{Eigen-vectors}
+For the given matrix and eigenvalue, find an eigenvector corresponding to the eigenvalue.
 \[
   A=
 \left[ {\begin{array}{cc}
@@ -117,7 +139,8 @@ Hint: One solution is to find a matrix $Q$ such that $$T' = Q^{-1} \cdot T \cdot
           \end{bmatrix}$
 \end{oneparchoices}
 
-\section{For the given matrix A, find a basis for the corresponding eigenspace for the given eigenvalue.}
+\section{Eigen-space}
+For the given matrix A, find a basis for the corresponding eigen-space for the given eigenvalue.
 \[
   A=
 \left[ {\begin{array}{ccc}
@@ -174,74 +197,93 @@ Hint: One solution is to find a matrix $Q$ such that $$T' = Q^{-1} \cdot T \cdot
           \end{bmatrix}
           \end{Bmatrix}$
 \end{oneparchoices}
+\vspace{5mm}
+\\
+\textbf{Fun fact:} Eigen-faces is an interesting application of eigen-spaces in machine learning/computer-vision that identifies fundamental face-types
+given a set of images of people's faces.
 
-\section{Find SVD of A, U$\sum$$\textbf{V}^\intercal$\/.} 
-\[
+\section{SVD and eigen-values}
+Let
+$$
   A=
 \left[ {\begin{array}{ccc}
    3 & 2 & 2 \\
    2 & 3 & -2
   \end{array} } \right]
-\]
+$$
 
-\subsection{What are the Eigen values of A?}
+Let the eigen-vectors of $AA^T$ be:
+$$
+X = 
+\left[ \begin{array}{cc}
+ 0.71 & -0.71 \\
+  0.71  & 0.71
+\end{array} \right]
+$$
+with eigen-values $25, 9$.
+
+Let the eigen-vectors of $A^TA$ be:
+$$
+Y = 
+\left[\begin{array}{ccc}
+-0.71 & -0.67 & 0.24 \\
+-0.71 & 0.67 & -0.24 \\
+0 & 0.33 & 0.94 
+\end{array} \right]
+$$
+with eigen-values $25, 0, 9$.
+
+
+\subsection{Left singular vectors of $A$}
+The left singular vectors of $A$ are given by:
 \begin{oneparchoices}
- \choice 25 
- \choice 39
- \choice 8
- \choice 4
+ \choice $XY$
+ \choice $X$
+ \choice $XY^T$
+ \choice $Y$
 \end{oneparchoices}
 
-\subsection{For $\lambda$=9, what is the unit length vector in the kernel?}
-
+\subsection{Right singular vectors of $A$}
+The right singular vectors of $A$ are given by:
 \begin{oneparchoices}
-  \choice $\begin{bmatrix}
-            $1/$\sqrt{2}$$ \\
-            $3/$\sqrt{2}$$ \\
-            2
-          \end{bmatrix}$
-
-  \choice $\begin{bmatrix}
-            $$\sqrt{2}$$ \\
-            0 \\
-            $1/$\sqrt{2}$$
-          \end{bmatrix}$
-
-  \choice $\begin{bmatrix}
-            $1/$\sqrt{2}$$ \\
-            $1/$\sqrt{2}$$ \\
-            0
-          \end{bmatrix}$
-          
-    \choice $\begin{bmatrix}
-            3 \\
-            $1/$\sqrt{2}$$ \\
-            2
-          \end{bmatrix}$
+ \choice $XY$
+ \choice $X$
+ \choice $XY^T$
+ \choice $Y$
 \end{oneparchoices}
 
-\subsection{What is the value of U in SVD?}
+\subsection{Singular values of $A$}
+The singular values of $A$ are given by:
 \begin{oneparchoices}
-  \choice $\begin{bmatrix}
-            $2/$\sqrt{2}$$ & $-1/$\sqrt{2}$$\\
-            $3/$\sqrt{2}$$ & $-2/$\sqrt{2}$$
-          \end{bmatrix}$
-
-  \choice $\begin{bmatrix}
-            7 & $1/4$\\
-            $1/4$ & 4
-          \end{bmatrix}$
-
-  \choice $\begin{bmatrix}
-            15 & 8\\
-            7 & $-1/$\sqrt{15}$$
-          \end{bmatrix}$
-
-  \choice $\begin{bmatrix}
-            $1/$\sqrt{2}$$ & $1/$\sqrt{2}$$\\
-            $1/$\sqrt{2}$$ & $-1/$\sqrt{2}$$
-          \end{bmatrix}$
+\choice 25, 9
+\choice 5, 3
+\choice 25, 9, 0
+\choice 5, 3, 0
 \end{oneparchoices}
+
+\subsection{Eigen-values of $A$}
+The eigen values of $A$ are given by:
+\begin{oneparchoices}
+\choice 25, 9
+\choice 5, 3, 0
+\choice 5, 3
+\choice Not defined
+\end{oneparchoices}
+
+\subsection{Raising to the power n}
+Consider $B = (AA^T)^n$ i.e. the matrix $AA^T$ multiplied to itself $n$ times.
+The eigen-vectors of $B$ are: \\
+\begin{oneparchoices}
+\choice $X^n$
+\choice $X$
+\choice $X^{2n}$
+\choice None of the above
+\end{oneparchoices}
+\\
+\vspace{5mm}
+\\
+\textbf{Fun fact:} Raising a square symmetric matrix, $C$ to the power $n$ shows up in Markov chains, an important topic in machine learning,
+where the matrix $C$ is the state transition probability matrix.
 
 \section{Recommender systems}
 Let's say you are tasked with building a recommender system for Amazon.
@@ -286,5 +328,51 @@ Given your storage solution from the previous question, what is the computationa
 \choice $O(m\log(n))$
 \choice $O(n\log(m))$
 \end{oneparchoices}
+
+
+\section{Bonus: Determine a representation for a linear transformation}
+Let 
+\begin{eqnarray}
+\left[ \begin{array}{c} 3 \\ 1 \end{array} \right],
+\left[ \begin{array}{c} 1 \\ 2 \end{array} \right],
+\end{eqnarray}
+be two eigenvectors for a transformation $T$ with eigenvalues 2 and 1 respectively. So, with respect to the two eigenvectors $T$ can be written as
+\[
+  T =
+\left( {\begin{array}{cccc}
+   2 & 0 \\
+   0 & 1
+  \end{array} } \right)
+\]
+Find the representation of $T$ (call it $T'$) with respect to the canonical basis vectors
+\begin{eqnarray}
+\left[ \begin{array}{c} 1 \\ 0 \end{array} \right],
+\left[ \begin{array}{c} 0 \\ 1 \end{array} \right],
+\end{eqnarray}
+
+Hint: One solution is to find a matrix $Q$ such that $$T' = Q^{-1} \cdot T \cdot Q$$ where $Q$ represents the change in base. Make sure that when $T'$ is applied to the two eigenvectors you get the desired result. \\
+
+\begin{oneparchoices}
+  \choice $\begin{bmatrix}
+            2 & 0 \\
+            0 & 1
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            11/5 & -3/5 \\
+            2/5 & 4/5
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            2/5 & -1/5 \\
+            1/5 & 3/5
+          \end{bmatrix}$
+
+  \choice $\begin{bmatrix}
+            3 & 1 \\
+            1 & 2
+          \end{bmatrix}$
+\end{oneparchoices}
+
 
 \end{document}
